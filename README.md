@@ -20,7 +20,7 @@ https://thenounproject.com/ <br>
 https://cssgradient.io/ <br>
 https://animista.net/ <br>
 
-ATRIBUTO DE CSS	O QUE ELE CONFIGURA
+ATRIBUTO DE CSS E	O QUE ELE CONFIGURA:
 background	cor de fundo, imagem, transparência.
 background-attachment	rolagem do fundo / marca d’água.
 background-image	imagem de fundo.
