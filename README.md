@@ -1,6 +1,9 @@
 # Utilidades
 
 CSS -> 
+
+https://swiperjs.com/get-started  -> melhores sliders
+
 https://madsonlimasouza.wordpress.com/2012/01/09/lista-de-tags-e-atributos-css/ lista de tags e atributos css
 https://www.flaticon.com/ icones gratuitos & pagos <br>
 https://iconstore.co/ icones gratuitos & pagos<br>
