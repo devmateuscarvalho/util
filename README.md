@@ -1,5 +1,7 @@
 # Utilidades
-Java -> mapa mental JPA - https://www.goconqr.com/mapamental/4227884/jpa-hibernate
+Java -> 
+mapa mental JPA - https://www.goconqr.com/mapamental/4227884/jpa-hibernate
+anotações JPA - https://strn.com.br/artigos/2018/12/11/todas-as-anota%C3%A7%C3%B5es-do-jpa-anota%C3%A7%C3%B5es-de-mapeamento/
 CSS -> 
 
 https://swiperjs.com/get-started  -> melhores sliders
