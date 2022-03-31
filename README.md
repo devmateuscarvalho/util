@@ -1,5 +1,5 @@
 # Utilidades
-
+Java -> mapa mental JPA - https://www.goconqr.com/mapamental/4227884/jpa-hibernate
 CSS -> 
 
 https://swiperjs.com/get-started  -> melhores sliders
