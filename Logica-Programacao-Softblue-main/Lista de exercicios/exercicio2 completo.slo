@@ -1,0 +1,78 @@
+// 2. A prefeitura de uma cidade fez uma pesquisa entre seus habitantes, coletando dados sobre o salário,
+// estado civil e quantidade de filhos. Elabore um algoritmo para apresentar (Use a estrutura enquanto-faça):
+// a) média do salário da população;
+// b) média do número de filhos;
+// c) menor salário;
+// d) percentual de pessoas com salário até R$1090,00.
+
+tipo pessoa{
+    real: salario;
+    inteiro: numeroFilhos;
+}
+
+início {
+    pessoa: cidadao[20];
+    caractere: confirmacao;
+    inteiro: i;
+    i = 0;
+    inteiro: contador;
+    contador = 1;
+    real: somaSalario;
+    somaSalario = 0;
+    real: mediaSalario;
+    inteiro:somaFilhos;
+    real:mediaFilhos;
+    somaFilhos = 0;
+    inteiro: contadorSalariosAbaixo;
+    contadorSalariosAbaixo = 0;
+    inteiro: porcentagemSalarioAbaixo;
+    
+    leia("Podemos começar a pesquisa?", confirmacao);
+    enquanto (confirmacao == "s" e i <= 20) {
+        leia("Qual o seu salário?", cidadao[i].salario);
+        se( cidadao[i].salario < 1090) {
+        contadorSalariosAbaixo = contadorSalariosAbaixo + 1;}
+        
+        
+        leia("Quantos filhos você tem?", cidadao[i].numeroFilhos);
+        leia("Proximo entrevistado, continuar pesquisa?", confirmacao);
+        somaSalario = somaSalario+cidadao[i].salario;
+        mediaSalario = somaSalario / contador;
+        escreva("A média do salário é de: "+ mediaSalario);
+        somaFilhos = somaFilhos + cidadao[i].numeroFilhos;
+        mediaFilhos =  somaFilhos / contador;
+        escreva("A média de filhos da população é de: "+mediaFilhos);
+        
+        real: menorSalario;
+        inteiro: j;
+        menorSalario = cidadao[0].salario;
+        se (cidadao[i].salario < menorSalario) {
+        menorSalario = cidadao[i].salario;}
+        escreva("O menor salário é de: "+ menorSalario);
+        
+        porcentagemSalarioAbaixo= (contadorSalariosAbaixo * 100) / contador;
+        escreva("A porcentagem das pessoas com salário abaixo de 1090 é de: " + porcentagemSalarioAbaixo);
+        i= i+1;
+        contador = contador + 1;
+    }
+}
+
+
+função encontrar_menor(real: v[20]) -> real {
+    real: menor;
+    inteiro: j;
+    menor = v[0];
+    
+    para j de 0 até 19 passo 1 {
+        se (v[j] < menor) {
+            menor = v[j];
+        }
+    }
+    
+    retorne menor;
+    
+}
+
+
+
+

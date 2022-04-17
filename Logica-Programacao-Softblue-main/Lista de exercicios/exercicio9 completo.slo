@@ -1,0 +1,68 @@
+//9. Uma empresa deseja aumentar seus preços em 35%. Faça um algoritmo que leia o código e o preço de
+//custo de cada produto e calcule o preço novo. Calcule também, a média dos preços com e sem aumento.
+//Mostre o código e o preço novo de cada produto e, no final, as médias. A entrada de dados deve terminar
+//quando for lido um código de produto negativo. (Use a estrutura para)
+
+tipo produtos{
+    inteiro: codigoProduto;
+    real: precoCusto;
+    real: novoPreco;
+}
+
+
+
+início{
+    
+    produtos: produto[50];
+    inteiro: contadorProdutos;
+    contadorProdutos = 1;
+    inteiro: i;
+    i = 0;
+    real: porcentagem;
+    real: mediaSemAumento;
+    real: mediaComAumento;
+    real: somaComAumento;
+    real: somaSemAumento;
+    
+    somaComAumento = 0;
+    somaSemAumento = 0;
+    
+    caractere: cadastrar;
+    
+    leia("Iniciar algoritmo? s/n", cadastrar);
+    
+    enquanto(cadastrar == "s"){
+        
+        
+        leia("Digite o código do produto", produto[i].codigoProduto);
+        leia("Digite o preço do produto", produto[i].precoCusto);
+        
+        
+        porcentagem = (produto[i].precoCusto * 35) / 100;
+        
+        
+        produto[i].novoPreco = produto[i].precoCusto + porcentagem;
+        
+        somaSemAumento = somaSemAumento + produto[i].precoCusto;
+        mediaSemAumento = somaSemAumento/contadorProdutos;
+        
+        somaComAumento = somaComAumento + produto[i].novoPreco;
+        mediaComAumento = somaComAumento/contadorProdutos;
+        
+        
+        escreva("Código do produto: "+produto[i].codigoProduto);
+        escreva("Novo preço: "+produto[i].novoPreco);
+        escreva("A média dos preços sem o aumento é de : "+ mediaSemAumento);
+        escreva("A média dos preços com o aumento é de : "+ mediaComAumento);
+        
+        
+        
+        
+        i = i+1;
+        
+        leia("Mais algum produto? s/n", cadastrar);
+        contadorProdutos = contadorProdutos +1;
+    }
+    
+    
+}

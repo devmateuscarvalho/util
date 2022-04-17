@@ -1,0 +1,103 @@
+//10. Escrever um algoritmo que leia um conjunto de 50 informações contendo, cada uma delas, a altura e o
+//sexo de uma pessoa (código=1, masculino código=2, feminino), calcule e mostre o seguinte (Use a estrutura
+//para):
+//a) a maior e a menor altura da turma
+//b) a média da altura das mulheres
+//c) a média da altura da turma.
+
+
+
+    tipo mulher {
+    real: altura_mulheres;
+}
+    tipo homem {
+    real: altura_homens;
+}
+
+início {
+    mulher: mulheres[50];
+    homem: homens[50];
+   
+    inteiro: i;
+    inteiro: contador_mulher;
+    inteiro: contador_homem;
+    inteiro: codigo;
+    real: soma_homem;
+    real: soma_mulher;   
+    real: soma_turma; 
+    real: media_homem;
+    real: media_mulher;
+    real: media_turma;
+    real: maior_mulher;
+    inteiro: m;
+    real: maior_homem;
+    inteiro: n;
+
+    
+    maior_homem = homens[0].altura_homens;
+    maior_mulher = mulheres[0].altura_mulheres;
+    
+    contador_mulher=0;
+    contador_homem=0;
+    i = 0;
+    soma_homem = 0;
+    soma_mulher = 0;
+    soma_turma = 0;
+    
+   
+   para i de 1 até 50 passo 1{
+   
+   leia("Digite o código, gênero MASCULINO= 1, FEMININO= 2", codigo);
+   
+   se (codigo == 1){
+   leia("Digite a sua altura, homem", homens[i].altura_homens);
+   contador_homem = contador_homem  + 1;
+   soma_homem = soma_homem + homens[i].altura_homens;
+   media_homem = soma_homem / contador_homem;
+   soma_turma= soma_homem + soma_mulher;
+   media_turma = soma_turma / i;
+   escreva("A média da altura da turma é de " + media_turma);
+   
+    para n de 1 até 49 passo 1{
+    se (homens[n].altura_homens > maior_homem) {
+    maior_homem = homens[n].altura_homens;
+    } } 
+       
+    se (maior_homem > maior_mulher){
+    escreva ("A altura do maior homem é de " + maior_homem + " metros!");}
+    senão se (maior_mulher > maior_homem){
+    escreva ("A altura da maior mulher é de " + maior_mulher + " metros!");}
+   }
+   
+   
+   senão se (codigo == 2){
+   leia("Digite a sua altura, mulher", mulheres[i].altura_mulheres);
+  
+   contador_mulher = contador_mulher + 1;
+   soma_mulher = soma_mulher + mulheres[i].altura_mulheres;
+   media_mulher = soma_mulher / contador_mulher;
+   soma_turma= soma_homem + soma_mulher;
+   media_turma = soma_turma / i;
+ 
+   escreva("A média da altura das mulheres é de " + media_mulher);
+   escreva("A média da altura da turma é de " + media_turma);
+   
+    
+    para m de 0 até 49 passo 1{
+    se (mulheres[m].altura_mulheres > maior_mulher) {
+    maior_mulher = mulheres[m].altura_mulheres;
+    }}
+    se (maior_homem > maior_mulher){
+    escreva ("A altura do maior homem é de " + maior_homem + " metros!");}
+    senão se (maior_mulher > maior_homem){
+    escreva ("A altura da maior mulher é de " + maior_mulher + " metros!");}
+    }
+
+
+    senão {
+       escreva("Digite um valor correto");
+       i = 50;
+  }
+
+}
+}

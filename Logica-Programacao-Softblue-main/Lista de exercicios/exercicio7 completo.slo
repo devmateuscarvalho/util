@@ -1,0 +1,28 @@
+// 7. Faça um algoritmo que leia as três notas de 35 alunos de uma turma. Para cada aluno, calcule a média
+// ponderada, como segue: MP = ( n1*2 + n2*4 + n3*3 ) /10
+
+
+início {
+    
+    real: nota1;
+    real: nota2;
+    real: nota3;
+    
+    real: mediaPonderada;
+    
+    
+    caractere: cadastro;
+    
+    leia("Deseja iniciar? s/n", cadastro);
+    
+    enquanto(cadastro == "s"){
+        leia("Digite sua primeira nota", nota1);
+        leia("Digite sua segunda nota", nota2);
+        leia("Digite sua terceira nota", nota3);
+        mediaPonderada = (nota1 * 2 + nota2 * 4 + nota3 * 3)/10;
+        escreva("Sua média foi de: "+mediaPonderada);
+        
+        leia("Deseja continuar? s/n", cadastro);
+    }
+    
+}

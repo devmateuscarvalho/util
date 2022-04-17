@@ -1,0 +1,10 @@
+início{
+real: tfare;
+real: tcelsius;
+leia("Temperatura em Fº para Cº", tfare);
+
+tcelsius = (tfare - 32)/9 * 5;
+
+escreva(tcelsius);
+
+}

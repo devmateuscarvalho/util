@@ -1,0 +1,22 @@
+// 1. Construir um algoritmo que calcule a média aritmética de vários valores inteiros positivos, lidos
+// externamente. O final da leitura acontecerá quando for lido um valor negativo. (Use a estrutura
+// enquanto-faça)
+
+
+início {
+    inteiro: nota;
+    inteiro: media;
+    inteiro: soma;
+    inteiro: n;
+    
+    n = 1;
+    soma= 0;
+    enquanto(nota >= 0) {
+        leia ("Valor " +  n, nota);
+        se (nota >= 0) {
+            soma = soma + nota;
+        n = n + 1; }
+    }
+    media = soma / (n-1);
+    escreva("A média dos valores aritméticos inteiros são: " + media);
+}

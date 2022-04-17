@@ -1,0 +1,25 @@
+tipo dados{
+caractere: estado_civil;
+real: salario;
+inteiro: numero_filhos;
+}
+   
+
+ cadastrar = "s";
+    contador = 1;
+enquanto(cadastrar == "s"){
+leia("Salario " + contador, salario+contador);
+leia("Estado Civil " + contador, estado_civil+contador);
+leia("Quantidade de filhos " + contador, numero_filhos+contador);
+    
+
+
+
+
+
+
+
+
+
+leia("Deseja cadastrar mais dados? ", cadastrar);
+}

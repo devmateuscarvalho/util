@@ -1,0 +1,20 @@
+início {
+inteiro: idade;
+leia("Idade", idade);
+
+caractere: categoria;
+
+se(idade < 0) {
+categoria = "Idade inválida";
+} 
+senão se(idade < 13){
+    categoria = "Criança";
+}
+senão se(idade < 18){
+categoria = "adolescente";
+}
+senão {
+ categoria = "adulto";   
+}
+escreva(categoria);
+}

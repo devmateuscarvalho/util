@@ -1,0 +1,14 @@
+início{
+real: nota1;           
+real: nota2;
+real: nota3;
+leia("Digite a primeira nota", nota1);     
+leia("Digite a segunda nota", nota2);     
+leia("Digite a terceira nota", nota3);
+
+real: media;
+media = (nota1 + nota2 + nota3) / 3;          
+
+escreva("A média das notas é de " + media); 
+ 
+}

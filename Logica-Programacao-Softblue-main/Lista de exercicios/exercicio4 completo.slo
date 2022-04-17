@@ -1,0 +1,92 @@
+//4. Foi feita uma pesquisa entre os 10000 habitantes de uma região para coletar os seguintes dados: sexo
+//(0-feminino, 1-masculino), idade e altura. Faça um algoritmo que leia as informações coletadas e mostre as
+//seguintes informações: (use o comando repita ate)
+//a) média da idade do grupo;
+//b) média da altura das mulheres;
+//c) média da idade dos homens;
+//d) percentual de pessoas com idade entre 18 e 45 anos (inclusive).
+
+tipo masculino{
+    inteiro: idade;
+    real: altura;
+}
+
+tipo feminino{
+    inteiro: idade;
+    real: altura;
+}
+
+início {
+    masculino: homem[10000];
+    feminino: mulher[10000];
+    
+    caractere: confirmacao;
+    caractere: confirmacaoSexo;
+    
+    inteiro: i;
+    i = 0;
+    
+    inteiro: contadorMulher;
+    inteiro: contadorHomem;
+    inteiro: contadorGeral;
+    
+    contadorMulher= 0;
+    contadorHomem=0;
+    contadorGeral=0;
+    
+    inteiro: contadorIdade;
+    contadorIdade=0;
+    
+    inteiro: porcentagemIdade;
+    
+    inteiro: mediaIdadeGeral;
+    inteiro: somaIdadeGeral;
+    somaIdadeGeral = 0;
+    
+    inteiro: somaIdadeHomens;
+    inteiro: mediaIdadeHomens;
+    somaIdadeHomens=0;
+    
+    real: somaAlturaMulheres;
+    real: mediaAlturaMulheres;
+    somaAlturaMulheres = 0;
+    
+    leia("Deseja iniciar a pesquisa? sim ou não", confirmacao);
+    enquanto( confirmacao == "sim"){
+        leia("Digite seu sexo: feminino ou masculino", confirmacaoSexo);
+        se ( confirmacaoSexo == "feminino" ) {
+            contadorMulher = contadorMulher + 1;
+            leia("Digite a sua altura:", mulher[i].altura);
+            leia("Digite a sua idade:", mulher[i].idade);
+            somaIdadeGeral= somaIdadeGeral + mulher[i].idade;
+            somaAlturaMulheres = somaAlturaMulheres + mulher[i].altura;
+            mediaAlturaMulheres = somaAlturaMulheres / contadorMulher;
+            se (mulher[i].idade >= 18 e mulher[i].idade <=45){
+                contadorIdade = contadorIdade + 1;
+            }
+        }
+        senão se(confirmacaoSexo == "masculino"){
+            contadorHomem = contadorHomem + 1;
+            leia("Digite a sua altura:", homem[i].altura);
+            leia("Digite a sua idade:", homem[i].idade);
+            somaIdadeGeral= somaIdadeGeral + homem[i].idade;
+            somaIdadeHomens= somaIdadeHomens + homem[i].idade;
+            mediaIdadeHomens = somaIdadeHomens / contadorHomem;
+            
+            
+        }
+        contadorGeral = contadorGeral + 1;
+        se (homem[i].idade >= 18 e homem[i].idade <=45){
+            contadorIdade = contadorIdade + 1;
+        }
+        
+        mediaIdadeGeral = somaIdadeGeral / contadorGeral;
+        porcentagemIdade = (contadorIdade * 100) / contadorGeral;
+        
+        escreva("A média da idade do grupo é de: "+ mediaIdadeGeral+" anos!");
+        escreva("A média da altura das mulheres é de: "+mediaAlturaMulheres);
+        escreva("A média da idade dos  homens é de: ",+ mediaIdadeHomens);
+        escreva("Percentual de pessoas entre 18 e 45 anos é de " + porcentagemIdade+" %!");
+        
+        i = i +1;
+    }}

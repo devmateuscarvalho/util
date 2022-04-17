@@ -1,0 +1,68 @@
+//5. Foi feita uma estatística nas principais cidades brasileiras para coletar dados sobre acidentes de trânsito.
+//Foram obtidos os seguintes dados: - código da cidade - estado (RS, SC, PR, SP, RJ, ...) - número de veículos
+//de passeio (em 2020) - número de acidentes de trânsito com vítimas (em 2020) Elabore um algoritmo para ler
+//informações de 20 cidades e apresentar: (Use a estrutura repita-ate)
+//a) qual o maior e o menor índice de acidentes de trânsito e a que cidades pertencem
+//b) qual a média de veículos nas cidades brasileiras
+//c) qual a média de acidentes com vítimas entre as cidades do Rio Grande do Sul.
+
+
+início {
+    inteiro: valores[20];
+    inteiro: i;
+    inteiro: soma;
+    inteiro: media;
+    inteiro: temp;
+    soma= 0;
+    temp = 0;
+    i = 0;
+    para i de 0 até 19 passo 1{
+        leia("Digite o valor", valores[i]);
+        soma = soma + valores[i];
+        media = soma/20;
+        se (valores[i] < 0){
+            i = 19;
+        escreva("Apenas números inteiros e positivos");}
+    }
+    
+    inteiro: f;
+    inteiro: m;
+    m = encontrar_maior(valores);
+    f= encontrar_menor(valores);
+    escreva("O maior valor é: " + m + " e o menor valor é: "+ f + " e a média dos números é de: "+media);
+    escreva(valores);
+}
+
+função encontrar_maior(inteiro: v[20]) -> inteiro {
+    inteiro: maior;
+    inteiro: n;
+    
+    maior = v[0];
+    
+    para n de 0 até 19 passo 1 {
+        se (v[n] > maior) {
+            maior = v[n];
+        }
+    }
+    
+    retorne maior;
+    
+}
+função encontrar_menor(inteiro: v[20]) -> inteiro {
+    inteiro: menor;
+    inteiro: j;
+    
+    menor = v[0];
+    
+    para j de 0 até 19 passo 1 {
+        se (v[j] < menor) {
+            menor = v[j];
+        }
+    }
+    
+    retorne menor;
+    
+}
+
+
+

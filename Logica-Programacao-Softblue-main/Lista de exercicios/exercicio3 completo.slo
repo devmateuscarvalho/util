@@ -1,0 +1,66 @@
+// 3. Escreva um algoritmo que leia 20 valores inteiros e positivos e (Use a estrutura enquanto-faça):
+// a) encontre o menor valor;
+// b) encontre o maior valor;
+// c) calcule a média dos números informados.
+
+
+
+início {
+    inteiro: valores[20];
+    inteiro: i;
+    inteiro: soma;
+    inteiro: media;
+    inteiro: temp;
+    soma= 0;
+    temp = 0;
+    i = 0;
+    para i de 0 até 19 passo 1{
+        leia("Digite o valor", valores[i]);
+        soma = soma + valores[i];
+        media = soma/20;
+        se (valores[i] < 0){
+            i = 19;
+        escreva("Apenas números inteiros e positivos");}
+    }
+    
+    inteiro: f;
+    inteiro: m;
+    m = encontrar_maior(valores);
+    f= encontrar_menor(valores);
+    escreva("O maior valor é: " + m + " e o menor valor é: "+ f + " e a média dos números é de: "+media);
+    escreva(valores);
+}
+
+função encontrar_maior(inteiro: v[20]) -> inteiro {
+    inteiro: maior;
+    inteiro: n;
+    
+    maior = v[0];
+    
+    para n de 0 até 19 passo 1 {
+        se (v[n] > maior) {
+            maior = v[n];
+        }
+    }
+    
+    retorne maior;
+    
+}
+função encontrar_menor(inteiro: v[20]) -> inteiro {
+    inteiro: menor;
+    inteiro: j;
+    
+    menor = v[0];
+    
+    para j de 0 até 19 passo 1 {
+        se (v[j] < menor) {
+            menor = v[j];
+        }
+    }
+    
+    retorne menor;
+    
+}
+
+
+

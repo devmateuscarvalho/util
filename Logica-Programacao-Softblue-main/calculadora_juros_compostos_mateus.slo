@@ -1,0 +1,14 @@
+início {
+real: fv; 
+real: pv; 
+real: i;  
+real: n; 
+
+leia("Valor atual do veículo", pv);
+leia("Taxa em número decimal(1, 1.4, 2, 2.5, ...)", i);
+leia("Tempo para pagar", n);
+
+fv = pv * pot( 1  +  i   / 100  , n);    
+escreva("Valo futuro = " + fv);
+
+}
